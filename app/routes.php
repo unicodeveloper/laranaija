@@ -28,3 +28,7 @@ Route::get('/developers', function(){
 Route::get('/projects', function(){
 	return "Naija Laravel Projects";
 });
+
+Route::get('/about', function(){
+   return "About Us";
+});
