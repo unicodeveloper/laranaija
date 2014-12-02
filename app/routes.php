@@ -13,10 +13,18 @@
 
 Route::get('/', function()
 {
-	//return View::make('hello');
-	return "<h1> Welcome to LaraNaija ( The Home for Nigerian Laravel Developers ) </h1>";
+	return View::make('welcome');
 });
 
 Route::get('/dashboard', function(){
 	return "Welcome to this Dashboard";
+});
+
+
+Route::get('/developers', function(){
+    return "Naija Laravel Developers";
+});
+
+Route::get('/projects', function(){
+	return "Naija Laravel Projects";
 });
