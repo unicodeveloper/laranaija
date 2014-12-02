@@ -13,7 +13,8 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	//return View::make('hello');
+	return "<h1> Welcome to LaraNaija ( The Home for Nigerian Laravel Developers ) </h1>";
 });
 
 Route::get('/dashboard', function(){
