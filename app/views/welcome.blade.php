@@ -1,36 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>LaraNaija :: Home Of Nigerian Laravel Developers</title>
-	<link href={{{ asset('css/bootstrap.min.css') }}} rel="stylesheet">
-    <link href={{{ asset('css/main.css') }}} rel="stylesheet">
-    <link href={{{ asset('css/font-awesome.min.css') }}} rel="stylesheet">
-</head>
-
-<body class="home">
-	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse navbar-fixed-top headroom">
-		<div class="container">
-			<div class="navbar-header">
-				<!-- Button for smallest screens -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="#">LaraNaija</a>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="/projects">Projects</a></li>
-					<li><a href="/developers">Developers</a></li>
-					<li><a href="/about">About</a></li>
-				</ul>
-			</div><!--/.nav-collapse -->
-		</div>
-	</div> 
-	<!-- /.navbar -->
-
+@extends('layouts.main')
+@section('content')
 	<!-- Header -->
 	<header id="head">
 		<div class="container">
@@ -106,31 +75,4 @@
 		</div>
 	</section>
 	<!-- /social links -->
-
-
-	<footer id="footer" class="top-space">
-		<div class="footer2">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="widget-body">
-							<p>
-							  Copyright &copy; 2014 Laranaija.com was created and is curated by <a href="https://twitter.com/unicodeveloper">Otemuyiwa Prosper</a>. Hosted on <a href="https://linode.com">Linode</a> using Forge.
-							</p>
-						</div>
-					</div>
-
-				</div> <!-- /row of widgets -->
-			</div>
-		</div>
-	</footer>	
-		
-
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-
-	{{ HTML::script('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}
-    {{ HTML::script('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js') }}
-    {{ HTML::script('js/jQuery.headroom.min.js') }}
-    {{ HTML::script('js/template.js') }}
-</body>
-</html>
+@stop

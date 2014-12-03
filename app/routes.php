@@ -16,19 +16,17 @@ Route::get('/', function()
 	return View::make('welcome');
 });
 
-Route::get('/dashboard', function(){
-	return "Welcome to this Dashboard";
-});
+Route::get('developers', 'DeveloperController@index');
+
+Route::get('developers/create', 'DeveloperController@create');
+
+Route::get('projects', 'ProjectController@index');
+
+Route::get('projects/create', 'ProjectController@create');
+
+Route::post('projects/create', 'ProjectController@store');
 
 
-Route::get('/developers', function(){
-    return "Naija Laravel Developers";
-});
-
-Route::get('/projects', function(){
-	return "Naija Laravel Projects";
-});
-
-Route::get('/about', function(){
-   return "About Us";
+Route::get('about', function(){
+   return View::make('about');
 });
