@@ -7,7 +7,7 @@
     <meta property="og:title" content="List of sites built with Laravel PHP framework" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://laranaija.com" />
-    <meta property="og:image" content="http://laranaija.com/images/logo.jpg" />
+    <meta property="og:image" content="http://laranaija.com/images/laranaija-screenshot.jpg" />
     <meta property="og:site_name" content="Laranaija.com" />
     <meta property="og:description" content="Laranaija.com is a compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers" />
     <meta name="description" content="Laranaija.com is a compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers">
