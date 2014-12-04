@@ -20,6 +20,7 @@ class CreateDevelopersTable extends Migration {
 			$table->text('bio');
 			$table->string('email');
 			$table->text('work_place');
+			$table->string('code_name');
 			$table->text('tags');
 			$table->timestamps();
 		});
