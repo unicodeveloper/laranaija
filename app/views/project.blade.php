@@ -32,7 +32,7 @@
                     	</span>
             		  </div>
             		  <h3 class='name-shift'> 
-                		 {{ $proj->name }}
+                		 {{ strtoupper($proj->name) }}
             		  </h3>
             		  <p class='url-shift'> 
                 		<a href="{{ $proj->url }}" target="__blank" class="visible-desktop">View Site</a> 
