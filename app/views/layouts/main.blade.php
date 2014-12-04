@@ -50,7 +50,7 @@
 					<div class="col-md-12">
 						<div class="widget-body">
 							<p>
-							  Copyright &copy; 2014 Laranaija.com was created and is curated by <a href="https://twitter.com/unicodeveloper">Otemuyiwa Prosper</a>. Hosted on <a href="https://linode.com">Linode</a> using Forge.
+							  Copyright &copy; 2014 Laranaija.com was created and is curated by <a href="https://twitter.com/unicodeveloper" target="_blank">Otemuyiwa Prosper</a>. Hosted on <a href="https://linode.com" target="_blank">Linode</a> using Forge.
 							</p>
 						</div>
 					</div>
