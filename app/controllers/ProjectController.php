@@ -11,7 +11,8 @@ class ProjectController extends BaseController {
 
 	public function index()
 	{
-		return View::make('project');
+		$projects = Project::paginate(5);
+		return View::make('project')->withProject( $projects );
 	}
 
 
@@ -62,7 +63,7 @@ class ProjectController extends BaseController {
 		$project->url             = Input::get('url');
 		$project->description     = Input::get('description');
 		$project->categories      = Input::get('categories')[0];
-		$project->email          = Input::get('from');
+		$project->email          =  Input::get('from');
 		$project->tags            = Input::get('tags')[0];
 		
 

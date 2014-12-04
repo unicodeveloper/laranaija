@@ -26,23 +26,20 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="#">LaraNaija</a>
+				<a class="navbar-brand laralogo" href={{{ URL::to('/') }}} > &#123;&#123;&#123; <span class="lara">LARA</span><span class="naija">NAIJA</span> &#125;&#125;&#125; </a>
 			</div>
 			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href={{{ URL::to('/') }}} > Home</a></li>
-					<li><a href={{{ URL::to('projects') }}} >Projects</a></li>
-					<li><a href={{{ URL::to('developers') }}} > Developers</a></li>
-					<li><a href={{{ URL::to('about') }}} > About</a></li>
-				</ul>
+			<ul class="nav navbar-nav pull-right">
+			  <li class="{{ Request::path() == '/' ? 'active' : ''; }}"><a href={{{ URL::to('/') }}} > Home</a></li>
+			  <li class="{{ Request::path() == 'projects' ? 'active' : ''; }}"><a href={{{ URL::to('projects') }}} >Projects</a></li>
+			  <li class="{{ Request::path() == 'developers' ? 'active' : ''; }}"><a href={{{ URL::to('developers') }}} > Developers</a></li>
+			  <li class="{{ Request::path() == 'about' ? 'active' : ''; }}"><a href={{{ URL::to('about') }}} > About</a></li>
+			</ul>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div> 
 	<!-- /.navbar -->
 
-	@if( Session::has('message'))
-	    {{{ Session::get('message') }}}
-	@endif
 
 	@yield('content')
 

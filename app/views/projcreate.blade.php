@@ -13,22 +13,35 @@
                         
                    <p>Please do not post multiple times. If you submit the same site more than once, the latest submission will be used</p>
 
-                   
+
 					@if( Session::has('message'))
-					    {{{ Session::get('message') }}}
+					    <p class="bg-success" style="padding:10px;border-radius:5px;">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+							{{{ Session::get('message') }}}
+			        	</p>	
+					    
 					@endif
+
+					 @if ( $errors->has() )
+
+                    	<p class="bg-danger" style="padding:10px;border-radius:5px;">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+							Oops! Please check the form below for errors.
+			        	</p>
+
+                    @endif
 				        
                    <p>
                    	   <input class="form-control  @if ($errors->has('name')) has-error @endif" placeholder="Name of the Project/Site" name="title" type="text" value="{{ Input::old('title') }}">
-                   	   @if ($errors->has('title')) <p class="help-block"> {{ $errors->first('title') }}</p> @endif
+                   	   @if ($errors->has('title')) <p class="text-danger"> {{ $errors->first('title') }}</p> @endif
                    </p>
                    <p>
                    		<input class="form-control @if ($errors->has('url')) has-error @endif" placeholder="URL of the Project/Site" name="url" type="text" value="{{ Input::old('url') }}">
-                   		@if ($errors->has('url')) <p class="help-block"> {{ $errors->first('url') }}</p> @endif
+                   		@if ($errors->has('url')) <p class="text-danger"> {{ $errors->first('url') }}</p> @endif
                    </p>
                    <p>
                    		<textarea class="form-control @if ($errors->has('description')) has-error @endif" placeholder="Describe the Project" rows="4" name="description" cols="50" value="{{ Input::old('description') }}" ></textarea>
-                        @if ($errors->has('description')) <p class="help-block"> {{ $errors->first('description') }}</p> @endif
+                        @if ($errors->has('description')) <p class="text-danger"> {{ $errors->first('description') }}</p> @endif
                    </p>
                    <p><select multiple="multiple" id="categories" placeholder="Choose Categories for this site" class="form-control @if ($errors->has('categories')) has-error @endif" name="categories[]">
 		                   <option value="1">Business</option>
@@ -46,7 +59,7 @@
 		                   <option value="38">Fashion</option>
 		                   <option value="39">Education</option>
 		              </select>
-		              @if ($errors->has('categories')) <p class="help-block"> {{ $errors->first('categories') }}</p> @endif
+		              @if ($errors->has('categories')) <p class="text-danger"> {{ $errors->first('categories') }}</p> @endif
 		            </p>
                    <p><select multiple="multiple" id="tags" placeholder="Choose tags for this site" class="form-control @if ($errors->has('tags')) has-error @endif" name="tags[]">
                    		   <option value="6">Blog</option>
@@ -63,10 +76,10 @@
                    		   <option value="13">Wardrobe CMS</option>
                    	  </select>
                    </p>
-                     @if ($errors->has('tags')) <p class="help-block"> {{ $errors->first('tags') }}</p> @endif
+                     @if ($errors->has('tags')) <p class="text-danger"> {{ $errors->first('tags') }}</p> @endif
                    <p>
                      <input class="form-control" placeholder="Your email (optional)" name="from" type="text" value="{{ Input::old('from') }}"></p>
-                   <p><input class="btn btn-default btn-lg btn-block" type="submit" value="Submit site"></p>
+                   <p><input class="btn btn-success btn-lg btn-block" type="submit" value="Submit site"></p>
                  </div>
                 </div>
             </form>

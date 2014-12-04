@@ -20,6 +20,8 @@ Route::get('developers', 'DeveloperController@index');
 
 Route::get('developers/create', 'DeveloperController@create');
 
+Route::post('developers/create', 'DeveloperController@store');
+
 Route::get('projects', 'ProjectController@index');
 
 Route::get('projects/create', 'ProjectController@create');
