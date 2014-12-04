@@ -44,36 +44,36 @@
                         @if ($errors->has('description')) <p class="text-danger"> {{ $errors->first('description') }}</p> @endif
                    </p>
                    <p><select multiple="multiple" id="categories" placeholder="Choose Categories for this site" class="form-control @if ($errors->has('categories')) has-error @endif" name="categories[]">
-		                   <option value="1">Business</option>
-		                   <option value="2">E-Commerce</option>
-		                   <option value="3">Blogs</option>
-		                   <option value="4">Uncategorized</option>
-		                   <option value="9">Open Source</option>
-		                   <option value="13">User driven</option>
-		                   <option value="17">Portfolio</option>
-		                   <option value="18">Customer Support</option>
-		                   <option value="22">Medical</option>
-		                   <option value="26">Agency</option>
-		                   <option value="30">Travel</option>
-		                   <option value="34">Entertainment</option>
-		                   <option value="38">Fashion</option>
-		                   <option value="39">Education</option>
+		                   <option value="Business">Business</option>
+		                   <option value="E-commerce">E-Commerce</option>
+		                   <option value="Blogs">Blogs</option>
+		                   <option value="Uncategorized">Uncategorized</option>
+		                   <option value="Open Source">Open Source</option>
+		                   <option value="User driven">User driven</option>
+		                   <option value="Portfolio">Portfolio</option>
+		                   <option value="Customer Support">Customer Support</option>
+		                   <option value="Medical">Medical</option>
+		                   <option value="Agency">Agency</option>
+		                   <option value="Travel">Travel</option>
+		                   <option value="Entertainment">Entertainment</option>
+		                   <option value="Fashion">Fashion</option>
+		                   <option value="Education">Education</option>
 		              </select>
 		              @if ($errors->has('categories')) <p class="text-danger"> {{ $errors->first('categories') }}</p> @endif
 		            </p>
                    <p><select multiple="multiple" id="tags" placeholder="Choose tags for this site" class="form-control @if ($errors->has('tags')) has-error @endif" name="tags[]">
-                   		   <option value="6">Blog</option>
-                   		   <option value="4">Bootstrap</option>
-                   		   <option value="7">CMS</option>
-                   		   <option value="5">Foundation</option>
-                   		   <option value="3">gallery</option>
-                   		   <option value="17">Gumby</option>
-                   		   <option value="1">Laravel 3</option>
-                   		   <option value="2">Laravel 4</option>
-                   		   <option value="8">Packages</option>
-                   		   <option value="9">Photos</option>
-                   		   <option value="10">Social</option>
-                   		   <option value="13">Wardrobe CMS</option>
+                   		   <option value="Blog">Blog</option>
+                   		   <option value="Bootstrap">Bootstrap</option>
+                   		   <option value="CMS">CMS</option>
+                   		   <option value="Foundation">Foundation</option>
+                   		   <option value="gallery">gallery</option>
+                   		   <option value="Gumby">Gumby</option>
+                   		   <option value="Laravel 3">Laravel 3</option>
+                   		   <option value="Laravel 4">Laravel 4</option>
+                   		   <option value="Packages">Packages</option>
+                   		   <option value="Photos">Photos</option>
+                   		   <option value="Social">Social</option>
+                   		   <option value="Wardrobe CMS">Wardrobe CMS</option>
                    	  </select>
                    </p>
                      @if ($errors->has('tags')) <p class="text-danger"> {{ $errors->first('tags') }}</p> @endif
