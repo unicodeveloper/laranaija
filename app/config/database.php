@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'forge',
+			'database'  => 'laranaija',
 			'username'  => 'forge',
-			'password'  => 'ddfdfdfdf',
+			'password'  => 'WvMToqKJZFRPxYlgZYmv',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
