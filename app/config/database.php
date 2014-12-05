@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => Config::get('serverdb.DB_HOST'),
-			'database'  => Config::get('serverdb.DB_NAME'),
-			'username'  => Config::get('serverdb.DB_USERNAME'),
-			'password'  => Config::get('serverdb.DB_PASSWORD'),
+			'host'      => '104.237.134.141',
+			'database'  => 'laranaija',
+			'username'  => 'forge',
+			'password'  => 'WvMToqKJZFRPxYlgZYmv',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
