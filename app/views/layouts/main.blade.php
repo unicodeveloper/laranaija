@@ -12,7 +12,7 @@
     <meta property="og:description" content="Laranaija.com is a compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers" />
     <meta name="description" content="Laranaija.com is a compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers">
     <meta name="author" content="Otemuyiwa Prosper, @unicodeveloper">
-	<title>LaraNaija :: Home Of Nigerian Laravel Developers</title>
+	<title>LARANAIJA :: Home Of Nigerian Laravel Developers</title>
 	<link rel="shortcut icon" href={{{ asset('images/favicon.ico') }}} type="image/x-icon">
 	<link href={{{ asset('css/bootstrap.min.css') }}} rel="stylesheet">
     <link href={{{ asset('css/main.css') }}} rel="stylesheet">
