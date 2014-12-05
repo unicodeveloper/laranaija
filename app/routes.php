@@ -28,6 +28,18 @@ Route::get('projects/create', 'ProjectController@create');
 
 Route::post('projects/create', 'ProjectController@store');
 
+Route::get('admin', 'HomeController@index');
+
+Route::get('admin/projects', 'HomeController@index');
+
+Route::get('admin/projects/{id}', 'HomeController@approve');
+
+Route::get('admin/developers', 'HomeController@showDevelopers');
+
+Route::get('admin/developers/{id}', 'HomeController@devapprove');
+
+
+
 
 Route::get('about', function(){
    return View::make('about');

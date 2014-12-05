@@ -26,29 +26,31 @@
                       <?php $kar = 1; ?>
                  @foreach ( $project as $proj )
 
-                 	  <div class="date-container">
-               			 <span class="day">
-                    			{{ $kar }}                
-                    	</span>
-            		  </div>
-            		  <h3 class='name-shift'> 
-                		 {{ strtoupper($proj->name) }}
-            		  </h3>
-            		  <p class='url-shift'> 
-                		<a href="{{ $proj->url }}" target="__blank" class="visible-desktop">View Site</a> 
-            		  </p>
-            		  <p>
-            		    {{{ $proj->description }}}
-            	        <br />
-            		  </p>
-            		  <p>Categories : {{{ $proj->categories }}}</p>
-            		  <p>Tags : {{{ $proj->tags }}} </p>
+                      @if( $proj->approval_status == 1 )
+	                 	  <div class="date-container">
+	               			 <span class="day">
+	                    			{{ $kar }}                
+	                    	</span>
+	            		  </div>
+	            		  <h3 class='name-shift'> 
+	                		 {{ strtoupper($proj->name) }}
+	            		  </h3>
+	            		  <p class='url-shift'> 
+	                		<a href="{{ $proj->url }}" target="__blank" class="visible-desktop">View Site</a> 
+	            		  </p>
+	            		  <p>
+	            		    {{{ $proj->description }}}
+	            	        <br />
+	            		  </p>
+	            		  <p>Categories : {{{ $proj->categories }}}</p>
+	            		  <p>Tags : {{{ $proj->tags }}} </p>
 
-            		  <hr/>
-                       <?php $kar++ ?>
+	            		  <hr/>
+	            	 @endif
+	                       <?php $kar++ ?>
                  @endforeach
 
-                  {{{ $project->links() }}}
+                  {{ $project->links() }}
             @endif
            
         </article>

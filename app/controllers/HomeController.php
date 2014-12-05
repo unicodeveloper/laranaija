@@ -15,9 +15,47 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function index()
 	{
-		return View::make('hello');
+		$allProjects = Project::all();
+		return View::make('adminProject')->withProject( $allProjects );
 	}
+
+	public function  showDevelopers()
+	{
+        $allDevelopers = Developer::all();
+		return View::make('adminDeveloper')->withDeveloper( $allDevelopers );
+	}
+
+	public function approve($id)
+	{
+		$projects = Project::find($id);
+
+		$projects->approval_status = 1;
+
+		$projects->save();
+
+		$message = "Project " . $projects->name . " has been Approved Successfully";
+
+		// redirect our user back to the form so they can do it all over again
+		return Redirect::to('admin/projects/')->withMessage( $message );
+	}
+
+	public function devapprove($id)
+	{
+		$developers = Developer::find($id);
+
+		$developers->approval_status = 1;
+
+		$developers->save();
+
+		$message = "Developer " . $developers->name . " has been Approved Successfully";
+
+		// redirect our user back to the form so they can do it all over again
+		return Redirect::to('admin/developers/')->withMessage( $message );
+	}
+
+
+
 
 }

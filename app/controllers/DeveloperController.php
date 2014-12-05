@@ -17,7 +17,7 @@ class DeveloperController extends BaseController {
 
 	public function index()
 	{
-		$developers = Developer::paginate(5);
+		$developers = Developer::where('approval_status', '=', 1 )->paginate(5);
 		return View::make('developer')->withDeveloper( $developers );
 	}
 

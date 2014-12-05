@@ -78,6 +78,7 @@
                    </p>
                      @if ($errors->has('tags')) <p class="text-danger"> {{ $errors->first('tags') }}</p> @endif
                    <p>
+                     <input type="hidden" name="approval_status" value="0">
                      <input class="form-control" placeholder="Your email (optional)" name="from" type="text" value="{{ Input::old('from') }}"></p>
                    <p><input class="btn btn-success btn-lg btn-block" type="submit" value="Submit site"></p>
                  </div>

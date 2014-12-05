@@ -11,7 +11,7 @@ class ProjectController extends BaseController {
 
 	public function index()
 	{
-		$projects = Project::paginate(5);
+		$projects = Project::where('approval_status', '=', 1 )->paginate(5);
 		return View::make('project')->withProject( $projects );
 	}
 
@@ -65,6 +65,7 @@ class ProjectController extends BaseController {
 		$project->categories      = Input::get('categories')[0];
 		$project->email          =  Input::get('from');
 		$project->tags            = Input::get('tags')[0];
+		$project->approval_status = Input::get('approval_status');
 		
 
 		// save our project

@@ -26,6 +26,8 @@
 		                      <?php $kar = 1; ?>
 		                 @foreach ( $developer as $dev )
 
+		                    @if( $dev->approval_status == 1)
+
 		                 	  <div class="date-container">
 		               			 <span class="day">
 		                    			{{ $kar }}                
@@ -46,10 +48,11 @@
 		            		  <a href="mailto:{{ $dev->email }}" class="btn btn-danger"> CONTACT {{{ strtoupper( $dev->code_name ) }}} </a>
 
 		            		  <hr/>
+		            		@endif
 		                       <?php $kar++ ?>
 		                 @endforeach
 
-		                 {{{ $developer->links() }}}
+		                 {{ $developer->links() }}
 		            @endif
 		           
 		        </article>
