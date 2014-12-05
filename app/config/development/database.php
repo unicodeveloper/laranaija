@@ -22,10 +22,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => '104.237.134.141',
 			'database'  => 'laranaija',
-			'username'  =>  'root',
-			'password'  =>  '',
+			'username'  => 'forge',
+			'password'  => 'WvMToqKJZFRPxYlgZYmv',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
