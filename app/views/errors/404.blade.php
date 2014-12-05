@@ -39,5 +39,15 @@
 		</div>
 	</div> 
 	<!-- /.navbar -->
+		
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+
+	{{ HTML::script('js/jquery.min.js') }}
+    {{ HTML::script('js/bootstrap.min.js') }}
+    {{ HTML::script('js/jQuery.headroom.min.js') }}
+    {{ HTML::script('js/template.js') }}
+    {{ HTML::script('js/selectize.min.js') }}
+    
 </body>
 </html>
