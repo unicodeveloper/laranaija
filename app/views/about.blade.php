@@ -16,7 +16,7 @@
 			<!-- Article main content -->
 			<article class="col-sm-8 maincontent">
 				<header class="page-header">
-					<h3 class="page-title">ABOUT LARANAIJA</h3>
+					<h3 class="page-title"> <i class="fa fa-bullhorn fa-lg"></i> ABOUT LARANAIJA</h3>
 				</header>
 
                 <img src={{{ asset('images/laranaija.png') }}} >
@@ -36,7 +36,7 @@ Laranaija.com was created by Otemuyiwa Prosper in December 2014 as a curated col
 			<aside class="col-sm-4 sidebar sidebar-right">
 
 				<div class="widget">
-					<h4>Vacancies</h4>
+					<h4> <i class="fa fa-money fa-lg"></i> Vacancies</h4>
 
 					 <img src={{{ asset('images/coming-soon.jpg') }}} >
 				</div>

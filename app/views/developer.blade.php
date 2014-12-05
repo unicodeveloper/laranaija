@@ -16,7 +16,7 @@
 			<!-- Article main content -->
 			<article class="col-md-8 maincontent">
 				<header class="page-header">
-					<h3 class="page-title">NIGERIAN LARAVEL DEVELOPERS</h3>
+					<h3 class="page-title"> <i class="fa fa-users fa-lg"></i>   NIGERIAN LARAVEL DEVELOPERS</h3>
 				</header>
 
 				<!--Get List Of Developers-->
@@ -30,22 +30,22 @@
 
 		                 	  <div class="date-container">
 		               			 <span class="day">
-		                    			{{ $kar }}                
+		                    		<i class="fa fa-shield fa-rotate-270"></i>	{{ $kar }}                
 		                    	</span>
 		            		  </div>
 		            		  <h3 class='name-shift'> 
 		                		 {{ strtoupper( $dev->name ) }}
 		            		  </h3>
 		            		  <p class='url-shift'> 
-		                		<a href="{{ $dev->url }}" target="__blank" class="visible-desktop">More Info</a> 
+		                		<i class="fa fa-external-link fa-lg"></i> <a href="{{ $dev->url }}" target="__blank" class="visible-desktop">More Info</a> 
 		            		  </p>
 		            		  <p>
 		            		    {{{ $dev->bio }}}
 		            	        <br />
 		            		  </p>
-		            		  <p>Work Place : {{{ $dev->work_place }}}</p>
-		            		  <p>Code Name : {{{ strtoupper( $dev->code_name ) }}} </p>
-		            		  <a href="mailto:{{ $dev->email }}" class="btn btn-danger"> CONTACT {{{ strtoupper( $dev->code_name ) }}} </a>
+		            		  <p><i class="fa fa-location-arrow fa-lg"></i> Work Place : {{{ $dev->work_place }}}</p>
+		            		  <p><i class="fa fa-bolt fa-lg"></i> Code Name : {{{ strtoupper( $dev->code_name ) }}} </p>
+		            		  <a href="mailto:{{ $dev->email }}" class="btn btn-danger"> CONTACT {{{ strtoupper( $dev->code_name ) }}} <i class="fa fa-mail-reply-all fa-lg"></i></a>
 
 		            		  <hr/>
 		            		@endif
@@ -65,8 +65,8 @@
 
 				<div class="row widget">
 					<div class="col-xs-12">
-						<h4>Developers</h4>
-						<a href={{{ URL::action('DeveloperController@create') }}} > Add yourself as a Laravel Developer</a>
+						<h4> <i class="fa fa-hand-o-right fa-lg"></i> Developers</h4>
+						<i class="fa fa-male fa-lg"></i> <a href={{{ URL::action('DeveloperController@create') }}} > Add yourself as a Laravel Developer</a> <i class="fa fa-female fa-lg"></i>
 					</div>
 
 					<img src={{{ asset('images/laravel-developer.jpg') }}} style="margin-top: 28px;">

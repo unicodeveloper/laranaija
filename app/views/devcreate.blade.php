@@ -58,7 +58,7 @@
 		           </p>
                    <p>
                    </p>
-                     <input class="btn btn-success btn-lg btn-block" type="submit" value="ADD NAIJA DEVELOPER"></p>
+                     <button class="btn btn-success btn-lg btn-block" type="submit" value="ADD NAIJA DEVELOPER"><i class="fa fa-plus-circle fa-lg"></i> ADD NAIJA DEVELOPER</button></p>
                  </div>
                 </div>
             </form>
