@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment( function(){
 	
-	return gethostname() == 'laranaija.com' ? 'production' : 'development';
+	return gethostname() == 'snowy-chasm' ? 'production' : 'development';
 
 });
 
