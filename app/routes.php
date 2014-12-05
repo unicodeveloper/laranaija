@@ -16,6 +16,12 @@ Route::get('/', function()
 	return View::make('welcome');
 });
 
+Route::get('environment', function(){
+   
+   return getenv('ENV');
+
+});
+
 Route::get('developers', 'DeveloperController@index');
 
 Route::get('developers/create', 'DeveloperController@create');
