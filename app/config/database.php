@@ -57,7 +57,7 @@ return array(
 			'host'      => 'forge',
 			'database'  => 'laranaija',
 			'username'  => 'forge',
-			'password'  => 'WvMToqKJZFRPxYlgZYmv',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
