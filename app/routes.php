@@ -18,7 +18,7 @@ Route::get('/', function()
 
 Route::get('environment', function(){
    
-   return getenv('ENV');
+   return gethostname();
 
 });
 
