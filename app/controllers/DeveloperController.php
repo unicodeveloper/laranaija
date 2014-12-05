@@ -75,7 +75,7 @@ class DeveloperController extends BaseController {
 		// save our Developer Details
 		$developer->save();
 
-		$developer_msg = "Naija Developer's Details Successfully Submitted";
+		$developer_msg = "Naija Developer's Details Successfully Submitted, Approval happens within 24hrs";
 
 		// redirect ----------------------------------------
 		// redirect our user back to the form so they can do it all over again

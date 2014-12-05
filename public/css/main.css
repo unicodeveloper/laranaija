@@ -1,4 +1,6 @@
 /* Header */
+
+
 #head { background:#181015 url( ../images/bg_header.jpg) no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:240px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300; }
 #head.secondary { height:100px; min-height: 100px; padding-top:0px; }
 	#head .lead { font-family:"Open sans", Helvetica, Arial; font-size:44px; margin-bottom:6px; color:white; line-height:1.15em; } 
@@ -56,7 +58,12 @@ img.pull-left { margin-right: 10px; }
 /* Main content block */
 .maincontent { }
 
-
+footer{
+	bottom:0;
+	position:relative;
+	width: 100%;
+	left:0;
+}
 
 /* Sidebars */
 .sidebar { padding-top:36px; padding-bottom:30px; }
@@ -260,3 +267,7 @@ a.laralogo{
 }
 .lara{ color: #fff !important;}
 .naija{ color: #18BC9C !important;}
+
+.container{
+	position: relative;
+}

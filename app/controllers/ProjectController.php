@@ -71,7 +71,7 @@ class ProjectController extends BaseController {
 		// save our project
 		$project->save();
 
-		$success_msg = "Project Successfully Submitted";
+		$success_msg = "Project Successfully Submitted, Approval happens within 24 hours";
 
 		// redirect ----------------------------------------
 		// redirect our user back to the form so they can do it all over again
