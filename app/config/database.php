@@ -54,7 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => getenv('DB_HOST'),
+			'host'      => gethostname(),
 			'database'  => getenv('DB_NAME'),
 			'username'  => getenv('DB_USERNAME'),
 			'password'  => getenv('DB_PASSWORD'),
