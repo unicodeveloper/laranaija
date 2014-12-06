@@ -17,7 +17,7 @@
 
 			<div class="row">
                 @if( $developer )
-                <table border="1">
+                <table class="table table-striped table-bordered">
                 <thead>
                     <th>No</th>
                 	<th>Name</th>
@@ -45,7 +45,7 @@
                   	    <td>
                   	    
                   	    @if ( $dev->approval_status == 0 ) 
-                  	       <p class="btn btn-small btn-danger"><a href={{{ URL::to('admin/developers')."/". $dev->id }}}>Not Approved</a></p> 
+                  	       <p><a class="btn btn-danger" href={{{ URL::to('admin/developers')."/". $dev->id }}}>Not Approved</a></p> 
                   	    @elseif ( $dev->approval_status == 1 ) 
                   	        <p class="btn btn-small btn-info">Approved</p>
                   	    @endif

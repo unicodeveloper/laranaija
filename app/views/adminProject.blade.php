@@ -17,7 +17,7 @@
 
 			<div class="row">
                 @if( $project )
-                <table border="1">
+                <table class="table table-striped table-bordered">
                 <thead>
                     <th>No</th>
                 	<th>Name</th>
@@ -27,6 +27,8 @@
                 	<th>Email</th>
                 	<th>Tags</th>
                 	<th>Approval Status</th>
+                	<th>Edit</th>
+                	<th>Delete</th>
                 </thead>
 			    
                       <?php $kar = 1; ?>
@@ -43,13 +45,15 @@
                   	    <td>
                   	    
                   	    @if ( $proj->approval_status == 0 ) 
-                  	       <p class="btn btn-small btn-danger"><a href={{{ URL::to('admin/projects')."/". $proj->id }}}>Not Approved</a></p> 
+                  	       <p><a class="btn btn-danger" href={{{ URL::to('admin/projects')."/". $proj->id }}}>Not Approved</a></p> 
                   	    @elseif ( $proj->approval_status == 1 ) 
                   	        <p class="btn btn-small btn-info">Approved</p>
                   	    @endif
                   	       
                   	     
                   	    </td>
+                  	    <td><a class="btn btn-info">Edit</a></td>
+                  	    <td><a class="btn btn-danger">Delete</a></td>
                   	 </tr>
 
                        <?php $kar++ ?>
