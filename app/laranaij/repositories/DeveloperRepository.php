@@ -1,28 +1,19 @@
 <?php
+namespace laranaij\repositories;
 
-class DeveloperController extends BaseController {
+use Developer;
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Developer Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
-	public function index()
+class DeveloperRepository implements DeveloperRepositoryInterface{
+
+	public function selectAll()
 	{
-		$developers  =  Developer::where('approval_status', '=', 1 )->paginate(5);
-		return View::make('developer')->withDeveloper( $developers );
+
+		return Developer::where('approval_status', '=', 1 )->paginate(5);
 	}
 
 
-	public function store(){
-
+	public function storeDetails()
+	{
 		// create the validation rules ------------------------
 		$rules = array(
 			'name'            => 'required',
@@ -50,7 +41,9 @@ class DeveloperController extends BaseController {
 			$messages = $validator->messages();
 
 			// redirect our user back to the form with the errors from the validator
-			return Redirect::to('developers/create')->withErrors($validator)->withInput();
+			$redirectWithErrors =  Redirect::to('developers/create')->withErrors($validator)->withInput();
+
+			return $redirectWithErrors;
 
 		} else {
 			// validation successful ---------------------------
@@ -78,19 +71,10 @@ class DeveloperController extends BaseController {
 
 			// redirect ----------------------------------------
 			// redirect our user back to the form so they can do it all over again
-			return Redirect::to('developers/create')->withMessage( $developer_msg );
+			$redirectWithMessage =  Redirect::to('developers/create')->withMessage( $developer_msg );
+
+			return $redirectWithMessage;
 
 		}
-	} 
-
-
-	public function create(){
-		return View::make('devcreate');
 	}
-
-	public function show( $id ){
-
-	}
-
-
 }
