@@ -44,6 +44,8 @@ Route::get('admin/developers', 'HomeController@showDevelopers');
 
 Route::get('admin/developers/{id}', 'HomeController@devapprove');
 
+Route::resource('demo/users', 'HomeController@index');
+
 
 
 
