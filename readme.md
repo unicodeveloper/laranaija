@@ -1,5 +1,6 @@
 ## LARANAIJA
 
+[![Build Status](https://travis-ci.org/busayo/laranaija.svg)](https://travis-ci.org/busayo/laranaija)
 
 Laranaija is a web application developed with the Laravel Framework. I believe development must be an enjoyable, creative experience to be truly fulfilling. 
 
