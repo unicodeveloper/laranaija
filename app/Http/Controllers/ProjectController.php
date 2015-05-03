@@ -6,8 +6,6 @@ use Input;
 use Redirect;
 
 class ProjectController extends Controller {
-
-
   /*
   |--------------------------------------------------------------------------
   | Project Controller
@@ -67,7 +65,7 @@ class ProjectController extends Controller {
     $project->url             = Input::get('url');
     $project->description     = Input::get('description');
     $project->categories      = Input::get('categories')[0];
-    $project->email          =  Input::get('from');
+    $project->email           =  Input::get('from');
     $project->tags            = Input::get('tags')[0];
     $project->approval_status = Input::get('approval_status');
 
