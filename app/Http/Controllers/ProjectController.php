@@ -1,6 +1,7 @@
 <?php namespace laranaija\Http\Controllers;
 
 use laranaija\Project;
+use laranaija\Mailers\ProjectMailer as Mailer;
 use Validator;
 use Input;
 use Redirect;
@@ -12,6 +13,13 @@ class ProjectController extends Controller {
   |--------------------------------------------------------------------------
   |
   */
+  protected $mailer;
+
+  public function __construct(Mailer $mailer)
+  {
+    $this->mailer = $mailer;
+  }
+
   public function index()
   {
     $projects = Project::where('approval_status', '=', 1 )->paginate(5);
@@ -72,6 +80,9 @@ class ProjectController extends Controller {
 
     // save our project
     $project->save();
+
+    // Notify me via email
+    $this->mailer->submitProject();
 
     $success_msg = "Project Successfully Submitted, Approval happens within 24 hours";
 

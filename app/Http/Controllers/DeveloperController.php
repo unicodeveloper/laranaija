@@ -1,11 +1,19 @@
 <?php namespace laranaija\Http\Controllers;
 
 use laranaija\Developer;
+use laranaija\Mailers\Mail;
 use Validator;
 use Redirect;
 use Input;
 
 class DeveloperController extends Controller {
+
+	protected $mailer;
+
+	public function __construct(Mailer $mailer)
+	{
+		$this->mailer = $mailer;
+	}
 
 
 	public function index()
@@ -48,10 +56,8 @@ class DeveloperController extends Controller {
 
 		} else {
 			// validation successful ---------------------------
-
 			// our duck has passed all tests!
 			// let him enter the database
-
 			// create the data for our Developer
 			$developer = new Developer;
 			$developer->name           = Input::get('name');
@@ -67,7 +73,6 @@ class DeveloperController extends Controller {
 
 			$developer_msg = "Naija Developer's Details Successfully Submitted, Approval happens within 24hrs";
 
-			// redirect ----------------------------------------
 			// redirect our user back to the form so they can do it all over again
 			return Redirect::to('developers/create')->withMessage( $developer_msg );
 

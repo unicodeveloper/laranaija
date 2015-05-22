@@ -22,7 +22,8 @@
 	},
 	"autoload-dev": {
 		"classmap": [
-			"tests/TestCase.php"
+			"tests/TestCase.php",
+			"laranaija/mailers"
 		]
 	},
 	"scripts": {
