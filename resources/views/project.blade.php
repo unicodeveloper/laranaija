@@ -23,30 +23,31 @@
 
 				<!--Project-->
         <article class="blog-post margin-60">
-            @if( $project )
+            @if($project)
                       <?php $kar = 1; ?>
-                 @foreach ( $project as $proj )
+                 @foreach ($project as $proj)
 
-                      @if( $proj->approval_status == 1 )
-	                 	  <div class="date-container">
-
-	               			 	<span class="day">
-  												<i class="fa fa-shield fa-rotate-270"></i> {!! $kar !!}
-	                    	</span>
-	            		  	</div>
-		            		  <h3 class='name-shift'>
-		                		 {!! strtoupper($proj->name) !!}
-		            		  </h3>
-		            		  <p class='url-shift'>
-		                		<i class="fa fa-external-link fa-lg"></i> <a href="{!! $proj->url !!}" target="__blank" class="visible-desktop">View Site</a>
-		            		  </p>
-		            		  <p>
-		            		    {!! $proj->description !!}
-		            	       <br />
-		            		  </p>
-		            		  <p><i class="fa fa-bookmark fa-lg"></i> Categories : {!! $proj->categories !!}</p>
-		            		  <p><i class="fa fa-tags fa-lg"></i> Tags : {!! $proj->tags !!} </p>
-	            		  <hr/>
+                      @if($proj->approval_status == 1)
+                      <div class="projects-wrapper">
+		                 	  <div class="date-container">
+		               			 	<span class="day">
+	  												<i class="fa fa-suitcase "></i>
+		                    	</span>
+		            		  	</div>
+			            		  <h3 class='name-shift'>
+			                		 {!! strtoupper($proj->name) !!}
+			            		  </h3>
+			            		  <p class='url-shift'>
+			                		<i class="fa fa-external-link fa-lg"></i> <a href="{!! $proj->url !!}" target="__blank" class="visible-desktop">View Site</a>
+			            		  </p>
+			            		  <p>
+			            		    {!! $proj->description !!}
+			            	       <br />
+			            		  </p>
+			            		  <p><i class="fa fa-bookmark fa-lg"></i> Categories : {!! $proj->categories !!}</p>
+			            		  <p><i class="fa fa-tags fa-lg"></i> Tags : {!! $proj->tags !!} </p>
+			            		</div>
+	            		   <hr/>
 	            	 		@endif
 	                  <?php $kar++ ?>
                  @endforeach

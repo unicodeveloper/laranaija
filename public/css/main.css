@@ -3,14 +3,14 @@
 
 #head { background:#181015 url( ../images/bg_header.jpg) no-repeat; background-size: cover; min-height:520px; text-align: center; padding-top:240px; color:white; font-family:"Open sans", Helvetica, Arial; font-weight:300; }
 #head.secondary { height:100px; min-height: 100px; padding-top:0px; }
-	#head .lead { font-family:"Open sans", Helvetica, Arial; font-size:44px; margin-bottom:6px; color:white; line-height:1.15em; } 
+	#head .lead { font-family:"Open sans", Helvetica, Arial; font-size:44px; margin-bottom:6px; color:white; line-height:1.15em; }
 	#head .tagline { color:rgba(255,255,255,0.75); margin-bottom:25px; }
-		#head .tagline a { color:#fff; } 
+		#head .tagline a { color:#fff; }
 	#head .btn { margin-bottom:10px;}
 	#head .btn-default { text-shadow: none; background:transparent; color:rgba(255,255,255,.5); -webkit-box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.5); -moz-box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.5); box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.5); background: transparent; }
 		#head .btn-default:hover,
 		#head .btn-default:focus { color:rgba(255,255,255,.8); -webkit-box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.8); -moz-box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.8); box-shadow:inset 0px 0px 0px 3px rgba(255,255,255,.8); background: transparent; }
-		#head .btn-default:active, 
+		#head .btn-default:active,
 		#head .btn-default.active { color:#fff; -webkit-box-shadow:inset 0px 0px 0px 3px #fff; -moz-box-shadow:inset 0px 0px 0px 3px #fff; box-shadow:inset 0px 0px 0px 3px #fff; background: transparent; }
 
 @media (max-width: 767px) {
@@ -30,7 +30,7 @@
    	   display: none;
    }
 }
-		
+
 
 /* Autohide navbar */
 .slideUp { top:-100px; }
@@ -39,7 +39,7 @@
 
 /* Highlights (in jumbotron in most cases) */
 .highlight { margin-top:40px; }
-	.h-caption { text-align: center; } 
+	.h-caption { text-align: center; }
 	.h-caption i { display:block; font-size: 54px; color:#382526; margin-bottom:36px; }
 	.h-caption h4 { color:#382526; font-size: 16px; font-weight: bold; margin-bottom:20px; }
 	.h-body { }
@@ -47,7 +47,7 @@
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 { font-family:"Open sans", Helvetica, Arial; }
-h1, .h1, h2, .h2, h3, .h3 { margin-top:30px; } 
+h1, .h1, h2, .h2, h3, .h3 { margin-top:30px; }
 blockquote { font-style: italic; font-family: Georgia; color:#999; margin:30px 0 30px; }
 label { color: #777; }
 .thin { font-weight:300; }
@@ -81,30 +81,30 @@ footer{
 /* Sidebars */
 .sidebar { padding-top:36px; padding-bottom:30px; }
 	.sidebar .widget { margin-bottom:20px; }
-	.sidebar h1, .sidebar .h1, .sidebar h2, .sidebar .h2, .sidebar h3, .sidebar .h3 { margin-top:20px; } 
+	.sidebar h1, .sidebar .h1, .sidebar h2, .sidebar .h2, .sidebar h3, .sidebar .h3 { margin-top:20px; }
 
 /* Footer */
 .footer1 { background: #232323; padding: 30px 0 0 0; font-size: 12px; color: #999; }
 	.footer1 a { color: #ccc; }
 		.footer1 a:hover {color: #fff; }
-	.footer1 .widget { margin-bottom:30px; }		
+	.footer1 .widget { margin-bottom:30px; }
 	.footer1 .widget-title { font-size: 17px; font-weight: bold; color: #ccc; margin: 0 0 20px; }
 	.footer1 .entry-meta { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; margin: 0 0 35px 0; padding: 2px 0; color: #888888; font-size: 12px; font-size: 0.75rem; }
 		.footer1 .entry-meta a { color: #333333; }
 		.footer1 .entry-meta .meta-in { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 10px 0; }
-	.follow-me-icons { font-size:30px; }		
-		.follow-me-icons i { float:left; margin:0 10px 0 0; }		
+	.follow-me-icons { font-size:30px; }
+		.follow-me-icons i { float:left; margin:0 10px 0 0; }
 
 .footer2 { background: #191919; padding: 15px 0; color: #777; font-size: 12px; }
 	.footer2 a { color: #aaa; }
 		.footer2 a:hover { color: #fff; }
 		.footer2 p { margin: 0; }
 
-	.widget-simplenav { margin-left:-5px; }		
-	.widget-simplenav a{ margin:0 5px; }	
+	.widget-simplenav { margin-left:-5px; }
+	.widget-simplenav a{ margin:0 5px; }
 
 
-/* HOME PAGE CAROUSEL 
+/* HOME PAGE CAROUSEL
 Fade content bs-carousel with hero headers
 Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
 Image credits: unsplash.com
@@ -151,7 +151,7 @@ Image credits: unsplash.com
               transform: translate3d(-50%,-50%,0);
 }
 .hero h1 {
-    font-size: 6em;    
+    font-size: 6em;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -160,18 +160,18 @@ Image credits: unsplash.com
 .fade-carousel .carousel-inner .item .hero {
     opacity: 0;
     -webkit-transition: 2s all ease-in-out .1s;
-       -moz-transition: 2s all ease-in-out .1s; 
-        -ms-transition: 2s all ease-in-out .1s; 
-         -o-transition: 2s all ease-in-out .1s; 
-            transition: 2s all ease-in-out .1s; 
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
 }
 .fade-carousel .carousel-inner .item.active .hero {
     opacity: 1;
     -webkit-transition: 2s all ease-in-out .1s;
-       -moz-transition: 2s all ease-in-out .1s; 
-        -ms-transition: 2s all ease-in-out .1s; 
-         -o-transition: 2s all ease-in-out .1s; 
-            transition: 2s all ease-in-out .1s;    
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
 }
 
 /********************************/
@@ -203,7 +203,7 @@ Image credits: unsplash.com
 /********************************/
 /*       Slides backgrounds     */
 /********************************/
-.fade-carousel .slides .slide-1, 
+.fade-carousel .slides .slide-1,
 .fade-carousel .slides .slide-2,
 .fade-carousel .slides .slide-3 {
   height: 100vh;
@@ -212,14 +212,14 @@ Image credits: unsplash.com
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818); 
+  background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
 }
 .fade-carousel .slides .slide-2 {
   background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
 }
 .fade-carousel .slides .slide-3 {
   background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
-}	
+}
 
 .home-error{
 	background-image: url(../images/lara-error.jpg);
@@ -249,7 +249,7 @@ margin-top: 5px;
 width: 56px;
 letter-spacing: -1px;
 font-size: 21px;
-margin-left: -10px;
+margin-left: -20px;
 text-align: center;
 position: absolute;
 box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.15);
@@ -288,3 +288,20 @@ a.laralogo{
 	position: relative;
 }
 
+
+.projects-wrapper{
+
+  border-radius: 4px;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-box-shadow:0 1px 4px rgba(0,0,0,.3);
+  -moz-box-shadow:0 1px 4px rgba(0,0,0,.3);
+  box-shadow:0 1px 4px rgba(0,0,0,.3);
+  cursor:pointer;
+  background-color: #ffffff;
+
+
+
+}
