@@ -1,7 +1,7 @@
 <?php namespace laranaija\Http\Controllers;
 
 use laranaija\Developer;
-use laranaija\Mailers\Mail;
+use laranaija\Mailers\DeveloperMail as Mailer;
 use Validator;
 use Redirect;
 use Input;
@@ -70,6 +70,9 @@ class DeveloperController extends Controller {
 
 			// save our Developer Details
 			$developer->save();
+
+			// Notify me via email
+			$this->mail->submitProfile();
 
 			$developer_msg = "Naija Developer's Details Successfully Submitted, Approval happens within 24hrs";
 
