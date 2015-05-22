@@ -1,7 +1,7 @@
 <?php namespace laranaija\Http\Controllers;
 
 use laranaija\Developer;
-use laranaija\Mailers\DeveloperMail as Mailer;
+use laranaija\Mailers\DeveloperMailer as Mailer;
 use Validator;
 use Redirect;
 use Input;
