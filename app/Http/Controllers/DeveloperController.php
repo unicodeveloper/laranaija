@@ -72,7 +72,7 @@ class DeveloperController extends Controller {
 			$developer->save();
 
 			// Notify me via email
-			$this->mail->submitProfile();
+			$this->mailer->submitProfile();
 
 			$developer_msg = "Naija Developer's Details Successfully Submitted, Approval happens within 24hrs";
 
