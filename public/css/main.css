@@ -79,7 +79,7 @@ ul.list-spaces li{ margin-bottom:10px; }
 
 /* Helpers */
 .container-full { margin: 0 auto; width: 100%; }
-.top-space { margin-top: 60px; }
+.top-space { margin-top: 0px; }
 .top-margin { margin-top:20px; }
 
 img { max-width:100%; }
@@ -121,7 +121,7 @@ img.pull-left { margin-right: 10px; }
   font-size: 12px;
 }
 .welcome .call-to-action, .landing .call-to-action {
-  background: #04a2dc;
+  background: #1abc9c;
   padding: 15px 30px;
   border-radius: 30px;
   margin-top: 10px;
@@ -135,13 +135,17 @@ img.pull-left { margin-right: 10px; }
   color: rgba(255,255,255,0.8);
 }
 .welcome {
-  padding: 40px 20px;
+  padding: 57px 20px;
   text-align: center;
-  background: #037daa;
+  background: #3f3328;
   color: white;
   position: relative;
   overflow: hidden;
   z-index: 2;
+  background-image: url(../images/welcome-bg.jpeg);
+  /*background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);*/
+  /*background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);*/
+
 }
 .welcome .connect {
   position: absolute;
