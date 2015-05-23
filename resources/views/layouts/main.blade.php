@@ -22,7 +22,7 @@
 
 <body class="home">
 	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse navbar-fixed-top headroom">
+	<div class="navbar navbar-default navbar-fixed-top headroom">
 		<div class="container">
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
@@ -60,7 +60,7 @@
 					<div class="col-md-12">
 						<div class="widget-body">
 							<p>
-							  Copyright &copy; 2014 Laranaija.com was created and is curated by <a href="https://twitter.com/unicodeveloper" target="_blank">Otemuyiwa Prosper</a>. Hosted on <a href="https://linode.com" target="_blank">Linode</a> using Forge.
+							  Copyright &copy; 2014 Laranaija.com was created and is curated by <a href="https://twitter.com/unicodeveloper" target="_blank">Otemuyiwa Prosper</a>. Hosted on <a href="https://linode.com" target="_blank">Linode</a> using <a href="https://forge.laravel.com" target="_blank">Forge.</a>.
 							</p>
 						</div>
 					</div>

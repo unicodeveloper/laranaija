@@ -63,12 +63,15 @@
 			<aside class="col-md-4 sidebar sidebar-right">
 
 				<div class="row widget">
-					<div class="col-xs-12">
+					<div class="col-xs-12 add-developer">
 						<h4> <i class="fa fa-hand-o-right fa-lg"></i> Developers</h4>
-						<i class="fa fa-male fa-lg"></i> <a href={!! URL::action('DeveloperController@create') !!} > Add yourself as a Laravel Developer</a> <i class="fa fa-female fa-lg"></i>
+						<i class="fa fa-user-secret fa-lg"></i>
+						<a href={!! URL::action('DeveloperController@create') !!} style="margin-bottom:5px;">  Add yourself as a Laravel Developer</a>
+
 					</div>
 
-					<img src={!! asset('images/laravel-developer.jpg') !!} style="margin-top: 28px;">
+					<div class="col-xs-12 laranaija-news">
+					</div>
 				</div>
 			</aside>
 			<!-- /Sidebar -->

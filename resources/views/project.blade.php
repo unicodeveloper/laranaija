@@ -68,8 +68,10 @@
 						<a href={!! URL::action('ProjectController@create') !!}>Add your Laravel Project</a>
 					</p>
 				</div>
+
+				<div class="col-xs-12 laranaija-news">
+				</div>
 			</div>
-			<img src={!! asset('images/laravel-project.png') !!} style="margin-top: 28px;">
 		</aside>
 		<!-- /Sidebar -->
 
