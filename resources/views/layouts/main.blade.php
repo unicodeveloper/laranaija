@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="List of sites built with Laravel PHP framework" />
+    <meta property="og:title" content="Showcase of Developer Profiles, web sites and applications built with Laravel PHP framework in Nigeria" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://laranaija.com" />
     <meta property="og:image" content="http://laranaija.com/images/laranaija-screenshot.jpg" />
     <meta property="og:site_name" content="Laranaija.com" />
     <meta property="og:description" content="Laranaija.com is a compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers" />
-    <meta name="description" content="Laranaija.com is a compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers">
+    <meta name="description" content="Laranaija.com is a Showcase of Developer Profiles; compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers">
     <meta name="author" content="Otemuyiwa Prosper, @unicodeveloper">
 	<title>LARANAIJA :: Home Of Nigerian Laravel Developers</title>
 	<link rel="shortcut icon" href={!! asset('images/favicon.ico') !!} type="image/x-icon">
