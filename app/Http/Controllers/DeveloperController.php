@@ -20,7 +20,7 @@ class DeveloperController extends Controller {
 	public function index()
 	{
 		$feeds = $this->getFeed();
-		$developers  =  Developer::where('approval_status', '=', 1 )->paginate(5);
+		$developers  =  Developer::where('approval_status', '=', 1 )->paginate(3);
 
 		return view('developer')->withDeveloper( $developers )->withFeed($feeds);;
 	}

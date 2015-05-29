@@ -20,40 +20,35 @@
 						<!--Get List Of Developers-->
 		        <article class="blog-post margin-60">
 		            @if($developer)
-		                 <?php $kar = 1; ?>
-
 		                 @foreach ($developer as $dev)
+		                    @if( $dev->approval_status == 1)
+		                    <div class="projects-wrapper">
+			                 	  <div class="date-container">
+			               			 <span class="day">
+			                    		<i class="fa fa-user-secret"></i>
+			                     </span>
+			            		 	  </div>
+				            		  <h3 class='name-shift'>
+				                		 {!! strtoupper( $dev->name ) !!}
+				            		  </h3>
+				            		  <p class='url-shift'>
+				                		<i class="fa fa-external-link fa-lg"></i>
+				                		<a href="{!! $dev->url !!}" target="__blank" class="visible-desktop">More Info</a>
+				            		  </p>
+				            		  <p>
+				            		    {!! $dev->bio !!}
+				            	        <br />
+				            		  </p>
+				            		  <p><i class="fa fa-location-arrow fa-lg"></i> Work Place : {!! $dev->work_place !!}</p>
+				            		  <p><i class="fa fa-bolt fa-lg"></i> Code Name : {!! strtoupper( $dev->code_name ) !!} </p>
+				            		  <a href="mailto:{!! $dev->email !!}" class="btn btn-danger"> CONTACT {!! strtoupper( $dev->code_name ) !!} <i class="fa fa-mail-reply-all fa-lg"></i></a>
+				            		</div>
+				            		<hr/>
+			            		@endif
+		               @endforeach
 
-	                    @if( $dev->approval_status == 1)
-	                    <div class="projects-wrapper">
-		                 	  <div class="date-container">
-		               			 <span class="day">
-		                    		<i class="fa fa-user-secret"></i>
-		                     </span>
-		            		 	  </div>
-			            		  <h3 class='name-shift'>
-			                		 {!! strtoupper( $dev->name ) !!}
-			            		  </h3>
-			            		  <p class='url-shift'>
-			                		<i class="fa fa-external-link fa-lg"></i>
-			                		<a href="{!! $dev->url !!}" target="__blank" class="visible-desktop">More Info</a>
-			            		  </p>
-			            		  <p>
-			            		    {!! $dev->bio !!}
-			            	        <br />
-			            		  </p>
-			            		  <p><i class="fa fa-location-arrow fa-lg"></i> Work Place : {!! $dev->work_place !!}</p>
-			            		  <p><i class="fa fa-bolt fa-lg"></i> Code Name : {!! strtoupper( $dev->code_name ) !!} </p>
-			            		  <a href="mailto:{!! $dev->email !!}" class="btn btn-danger"> CONTACT {!! strtoupper( $dev->code_name ) !!} <i class="fa fa-mail-reply-all fa-lg"></i></a>
-			            		</div>
-			            		<hr/>
-		            		@endif
-
-		                <?php $kar++ ?>
-		                @endforeach
-
-		                {!! $developer->render() !!}
-		            @endif
+		              {!! $developer->render() !!}
+		          @endif
 		        </article>
 
 			</article>
