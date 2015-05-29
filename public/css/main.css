@@ -386,7 +386,6 @@ position: absolute;
 width: 0;
 border-color: #31363a transparent;
 }
-
 .description-shift {
 padding-top: 16px;
 color: rgb(82, 82, 82);
@@ -394,7 +393,6 @@ font-size: 16px;
 line-height: 24px;
 font-weight: 300;
 }
-
 .url-shift{
 	margin-left:8%;
 }
@@ -403,14 +401,10 @@ a.laralogo{
 }
 .lara{ color: #33383a !important;}
 .naija{ color: #18BC9C !important;}
-
 .container{
 	position: relative;
 }
-
-
 .projects-wrapper{
-
   border-radius: 4px;
   padding-top:10px;
   padding-bottom:10px;
@@ -421,7 +415,11 @@ a.laralogo{
   box-shadow:0 1px 4px rgba(0,0,0,.3);
   cursor:pointer;
   background-color: #ffffff;
-
-
-
+}
+.laravel-news{
+  padding: 4px;
+}
+.laranaija-news h5{
+  color: #1abc9c;
+  font-weight: bold;
 }

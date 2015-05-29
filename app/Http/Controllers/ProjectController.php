@@ -1,10 +1,13 @@
 <?php namespace laranaija\Http\Controllers;
 
-use laranaija\Project;
-use laranaija\Mailers\ProjectMailer as Mailer;
-use Validator;
 use Input;
+use laranaija\Feeder\Feed;
+use laranaija\Mailers\ProjectMailer as Mailer;
+use laranaija\Project;
 use Redirect;
+use Validator;
+
+
 
 class ProjectController extends Controller {
   /*
@@ -22,8 +25,22 @@ class ProjectController extends Controller {
 
   public function index()
   {
+    $feeds = $this->getFeed();
     $projects = Project::where('approval_status', '=', 1 )->paginate(5);
-    return view('project')->withProject( $projects );
+
+    return view('project')->withProject($projects)->withFeed($feeds);
+  }
+
+  public function getFeed(){
+    $url = 'https://laravel-news.com/feed/';
+    $rss = Feed::loadRss($url);
+    $data = [];
+
+    foreach ($rss->item as $item) {
+      array_push($data, $item);
+    }
+
+    return $data;
   }
 
 

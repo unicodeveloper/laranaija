@@ -70,6 +70,14 @@
 				</div>
 
 				<div class="col-xs-12 laranaija-news">
+					<h5 align="center"> LARAVEL NEWS </h5>
+					@if($feed)
+						@foreach($feed as $f)
+							<div class="laravel-news">
+								 <a href="{!! $f->link !!}" target="_blank"> {!! $f->title !!} </a>
+							</div>
+						@endforeach
+					@endif
 				</div>
 			</div>
 		</aside>

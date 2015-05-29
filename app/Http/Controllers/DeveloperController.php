@@ -1,6 +1,7 @@
 <?php namespace laranaija\Http\Controllers;
 
 use laranaija\Developer;
+use laranaija\Feeder\Feed;
 use laranaija\Mailers\DeveloperMailer as Mailer;
 use Validator;
 use Redirect;
@@ -18,9 +19,24 @@ class DeveloperController extends Controller {
 
 	public function index()
 	{
+		$feeds = $this->getFeed();
 		$developers  =  Developer::where('approval_status', '=', 1 )->paginate(5);
-		return view('developer')->withDeveloper( $developers );
+
+		return view('developer')->withDeveloper( $developers )->withFeed($feeds);;
 	}
+
+	public function getFeed(){
+    $url = 'https://laravel-news.com/feed/';
+    $rss = Feed::loadRss($url);
+    $data = [];
+
+    foreach ($rss->item as $item) {
+      array_push($data, $item);
+    }
+
+    return $data;
+  }
+
 
 
 	public function store(){
