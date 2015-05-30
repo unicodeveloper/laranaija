@@ -1,33 +1,61 @@
 <?php namespace laranaija\Http\Controllers;
 
+use Input;
 use laranaija\Developer;
 use laranaija\Feeder\Feed;
 use laranaija\Mailers\DeveloperMailer as Mailer;
-use Validator;
 use Redirect;
-use Input;
+use Validator;
 
 class DeveloperController extends Controller {
 
+	/**
+   * holds the instance of laranaija\Mailers\DeveloperMailer
+   *
+   * @var $mailer
+   */
 	protected $mailer;
 
+	/**
+   * holds laravel news feed Url
+   *
+   * @var $laraUrl
+   */
+	protected $laraUrl;
+
+	/**
+   * Create a new DeveloperController instance.
+   *
+   * @param  laranaija\Mailers\DeveloperMailer $mailer
+   * @return void
+   */
 	public function __construct(Mailer $mailer)
 	{
 		$this->mailer = $mailer;
 	}
 
-
+	/**
+   * Show the Developers screen to the user.
+   *
+   * @return void
+   */
 	public function index()
 	{
-		$feeds = $this->getFeed();
+		$url   			 = 'https://laravel-news.com/feed/';
+		$feeds 			 = $this->getFeed($url);
 		$developers  =  Developer::where('approval_status', '=', 1 )->paginate(3);
 
-		return view('developer')->withDeveloper( $developers )->withFeed($feeds);;
+		return view('developer')->withDeveloper( $developers )->withFeed($feeds);
 	}
 
-	public function getFeed(){
-    $url = 'https://laravel-news.com/feed/';
-    $rss = Feed::loadRss($url);
+	/**
+   * Show the RSS feed.
+   * @param  string  $url
+   * @return array $data
+   */
+	public function getFeed($url){
+    $this->laraUrl = $url;
+    $rss = Feed::loadRss($this->laraUrl);
     $data = [];
 
     foreach ($rss->item as $item) {
@@ -37,11 +65,15 @@ class DeveloperController extends Controller {
     return $data;
   }
 
-
-
+  /**
+   * Store the Developers Profile Information.
+   *
+   * @return RedirectResponse
+   */
 	public function store(){
-
-		// create the validation rules ------------------------
+		/*
+     * Create Validation rules
+     */
 		$rules = array(
 			'name'            => 'required',
 			'email'           => 'required',
@@ -51,61 +83,55 @@ class DeveloperController extends Controller {
 			'description'     => 'required'
 		);
 
-
-		// create custom validation messages ------------------
+    /*
+     * Create custom validation messages
+     */
 		$messages = array(
 			'required' => 'The :attribute is very important.'
 		);
 
-				// do the validation ----------------------------------
-		// validate against the inputs from our form
+		/*
+     * Validate against the Form Inputs
+     */
 		$validator = Validator::make(Input::all(), $rules, $messages);
 
-		// check if the validator failed -----------------------
-		if ($validator->fails()) {
+		if($validator->fails()) {
 
-			// get the error messages from the validator
 			$messages = $validator->messages();
 
-			// redirect our user back to the form with the errors from the validator
 			return Redirect::to('developers/create')->withErrors($validator)->withInput();
 
 		} else {
-			// validation successful ---------------------------
-			// our duck has passed all tests!
-			// let him enter the database
-			// create the data for our Developer
+			/*
+	     * Validation Successful
+	     * Create the data for our Developer
+	     */
 			$developer = new Developer;
 			$developer->name           = Input::get('name');
 			$developer->url            = Input::get('url');
-			$developer->bio    		   = Input::get('description');
+			$developer->bio    		   	 = Input::get('description');
 			$developer->email          = Input::get('email');
 			$developer->work_place     = Input::get('work_place');
 			$developer->code_name      = Input::get('codename');
 			$developer->tags           = Input::get('tags');
-
-			// save our Developer Details
 			$developer->save();
 
-			// Notify me via email
+			/*
+       * Email Notification immediately Developer Profile is submitted
+       */
 			$this->mailer->submitProfile();
-
 			$developer_msg = "Naija Developer's Details Successfully Submitted, Approval happens within 24hrs";
 
-			// redirect our user back to the form so they can do it all over again
 			return Redirect::to('developers/create')->withMessage( $developer_msg );
-
 		}
 	}
 
-
+	/**
+   * Show the Create Developer Profile Form.
+   *
+   * @return Response
+   */
 	public function create(){
 		return view('devcreate');
 	}
-
-	public function show( $id ){
-
-	}
-
-
 }

@@ -1,89 +1,103 @@
 <?php namespace laranaija\Http\Controllers;
 
 use laranaija\Developer;
-use laranaija\Project;
 use laranaija\Mailers\DeveloperMailer as DevMailer;
 use laranaija\Mailers\ProjectMailer as ProMailer;
+use laranaija\Project;
 use Redirect;
 
 class HomeController extends Controller {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+	/**
+   * holds the instance of laranaija\Mailers\ProjectMailer
+   *
+   * @var $promailer
+   */
+	protected $promailer;
 
-	protected $promailer, $devmailer;
+	/**
+   * holds the instance of laranaija\Mailers\DeveloperMailer
+   *
+   * @var $devmailer
+   */
+	protected $devmailer;
 
+	/**
+   * Create a new HomeController instance.
+   *
+   * @param  laranaija\Mailers\ProjectMailer 	 $promailer
+   * @param  laranaija\Mailers\DeveloperMailer $devmailer
+   * @return void
+   */
 	public function __construct(ProMailer $promailer, DevMailer $devmailer){
 
-		 $this->promailer = $promailer;
-		 $this->devmailer = $devmailer;
+		$this->promailer = $promailer;
+		$this->devmailer = $devmailer;
 	}
 
+	/**
+   * Show the List of Projects to the Admin user.
+   *
+   * @return Response
+   */
 	public function index()
 	{
 		$allProjects = Project::all();
-		return view('adminProject')->withProject( $allProjects );
+		return view('adminProject')->withProject($allProjects);
 	}
 
+	/**
+   * Show the List of Developers to the Admin user.
+   *
+   * @return Response
+   */
 	public function  showDevelopers()
 	{
-     $allDevelopers = Developer::all();
-		return view('adminDeveloper')->withDeveloper( $allDevelopers );
+    $allDevelopers = Developer::all();
+		return view('adminDeveloper')->withDeveloper($allDevelopers);
 	}
 
+	/**
+   * Approve projects submitted by the Users.
+   *
+   * @return Response
+   */
 	public function approve($id)
 	{
-		$projects = Project::find($id);
-
-		$projects->approval_status = 1;
-
-		$email = $projects->email;
-
+		$projects 		= Project::find($id);
+		$email 				= $projects->email;
 		$projectTitle = strtoupper($projects->name);
-
+		$projects->approval_status = 1;
 		$projects->save();
 
+		/*
+     * Send email to the User on Project Approval
+     */
+		$this->promailer->notifyUserOfApproval($email, $data = [], $projectTitle);
 		$message = "Project " . $projects->name . " has been Approved Successfully";
 
-		// Sends email to the User that his project has been approved.
-		$this->promailer->notifyUserOfApproval($email, $data = [], $projectTitle);
-
-		// redirect our user back to the form so they can do it all over again
 		return Redirect::to('admin/projects/')->withMessage( $message );
 	}
 
+	/**
+   * Approve developer profiles submitted by the Users.
+   * @param  Integer $id
+   * @return RedirectResponse
+   */
 	public function devapprove($id)
 	{
 		$developers = Developer::find($id);
-
+		$email 		  = $developers->email;
+		$codeName   =	strtoupper($developers->code_name);
 		$developers->approval_status = 1;
-
-		$email 		= $developers->email;
-
-		$codeName =	strtoupper($developers->code_name);
-
 		$developers->save();
 
+		/*
+     * Send email to the User on Profile Approval
+     */
+		$this->devmailer->notifyDevOfApproval($email, $data = [], $codeName);
 		$message = "Developer " . $developers->name . " has been Approved Successfully";
 
-		// Sends email to the Developer notifiying him that his profile is now visible.
-		$this->devmailer->notifyDevOfApproval($email, $data = [], $codeName);
-
-		// redirect our user back to the form so they can do it all over again
 		return Redirect::to('admin/developers/')->withMessage($message);
 	}
-
-
-
-
 }
