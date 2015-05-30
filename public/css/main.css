@@ -178,6 +178,7 @@ footer{
   border-radius: 5px;
   background-color: #ffffff;
   border: solid 1px #e8e8e8;
+  overflow: hidden;
 }
 
 /* Sidebars */
@@ -417,7 +418,8 @@ a.laralogo{
   background-color: #ffffff;
 }
 .laravel-news{
-  padding: 4px;
+  padding: 3px;
+  margin-bottom:1px;
 }
 .laranaija-news h5{
   color: #1abc9c;
