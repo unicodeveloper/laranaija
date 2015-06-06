@@ -1,4 +1,4 @@
-	<?php namespace laranaija\Http\Middleware;
+<?php namespace laranaija\Http\Middleware;
 
 use Closure;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
