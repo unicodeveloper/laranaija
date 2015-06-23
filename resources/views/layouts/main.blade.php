@@ -12,9 +12,9 @@
     <meta property="og:description" content="Laranaija.com is a compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers" />
     <meta name="description" content="Laranaija.com is a Showcase of Developer Profiles; compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers">
     <meta name="author" content="Otemuyiwa Prosper, @unicodeveloper">
-	<title>LARANAIJA :: Home Of Nigerian Laravel Developers</title>
-	<link rel="shortcut icon" href={!! asset('images/favicon.ico') !!} type="image/x-icon">
-	<link href={!! asset('css/bootstrap.min.css') !!} rel="stylesheet">
+	  <title>LARANAIJA :: Home Of Nigerian Laravel Developers</title>
+	  <link rel="shortcut icon" href={!! asset('images/favicon.ico') !!} type="image/x-icon">
+	  <link href={!! asset('css/bootstrap.min.css') !!} rel="stylesheet">
     <link href={!! asset('css/main.css') !!} rel="stylesheet">
     <link href={!! asset('css/font-awesome.min.css') !!} rel="stylesheet">
     <link href={!! asset('css/selectize.bootstrap3.css') !!} rel="stylesheet">
@@ -60,7 +60,7 @@
 					<div class="col-md-12">
 						<div class="widget-body">
 							<p>
-							  Copyright &copy; 2014 Laranaija.com was created and is curated by <a href="https://twitter.com/unicodeveloper" target="_blank">Otemuyiwa Prosper</a>. Hosted on <a href="https://linode.com" target="_blank">Linode</a> using <a href="https://forge.laravel.com" target="_blank">Forge.</a>.
+							  Copyright &copy; 2014 Laranaija.com was created and is curated by <a href="#" target="_blank">Swashminds</a>. Hosted on <a href="https://linode.com" target="_blank">Linode</a> using <a href="https://forge.laravel.com" target="_blank">Forge.</a>.
 							</p>
 						</div>
 					</div>
