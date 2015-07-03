@@ -60,7 +60,7 @@
 					<div class="col-md-12">
 						<div class="widget-body">
 							<p>
-							  Copyright &copy; 2014 Laranaija.com was created and is curated by <a href="#" target="_blank">Swashminds</a>. Hosted on <a href="https://linode.com" target="_blank">Linode</a> using <a href="https://forge.laravel.com" target="_blank">Forge.</a>.
+							  Copyright &copy; 2014 Laranaija.com was created and is curated by <a href="https://twitter.com/unicodeveloper" target="_blank">Otemuyiwa Prosper</a>. Hosted on <a href="https://linode.com" target="_blank">Linode</a> using <a href="https://forge.laravel.com" target="_blank">Forge.</a>.
 							</p>
 						</div>
 					</div>

@@ -7,7 +7,7 @@
   <div class="welcome gradient-bg">
     <div class="row">
       <h2 class="big-title">CREATIVE, AWESOME AND AMAZING LARASHINANEGANS!</h2>
-      <h4 class="sub-title">The Best Place to Showcase projects crafted by Laravel Nigerian Developers</h4>
+      <h4 class="sub-title">The Best Place to Showcase projects crafted by Nigerian Laravel Developers</h4>
       <a class="call-to-action" href="http://devcenter.co/feed">FEATURED ON DEVCENTER.CO</a>
     </div>
   </div>
