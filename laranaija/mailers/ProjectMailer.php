@@ -4,7 +4,6 @@ class ProjectMailer extends Mailer{
 
     public function submitProject()
     {
-
       $user = 'prosperotemuyiwa@gmail.com';
       $view = 'emails.project';
       $data = [];
@@ -15,7 +14,6 @@ class ProjectMailer extends Mailer{
 
     public function notifyUserOfApproval($email, $data, $projectTitle = 'NOW')
     {
-
       $userEmail = $email;
       $view      = 'emails.projectapproval';
       $data      = $data;
