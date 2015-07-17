@@ -9,4 +9,6 @@ class Developer extends Model{
 	 * @var string
 	 */
 	protected $table = 'developers';
+
+
 }
