@@ -15,22 +15,6 @@ Route::get('/', function()
   return view('welcome');
 });
 
-Route::get('/feed', function(){
-
-  $url = 'https://laravel-news.com/feed/';
-
-  $rss = Feed::loadRss($url);
-
-  foreach ($rss->item as $item) {
-      echo 'Title: ', $item->title;
-      echo '<br/>';
-      echo 'Link: ', $item->link;
-      echo '<br/>';
-      echo 'Timestamp: ', $item->timestamp;
-      echo '<br/>';
-  }
-});
-
 Route::get('environment', function(){
    return gethostname();
 });
