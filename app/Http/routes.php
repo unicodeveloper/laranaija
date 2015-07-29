@@ -38,8 +38,3 @@ Route::resource('demo/users', 'HomeController@index');
 Route::get('about', function(){
    return view('about');
 });
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
