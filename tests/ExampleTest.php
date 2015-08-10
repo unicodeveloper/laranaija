@@ -19,7 +19,6 @@ class ExampleTest extends TestCase {
 
 	public function testBasicString()
 	{
-		//$response = $this->call('GET', '/');
 		$name = 'Laravel 5';
 
 		$this->assertEquals('Laravel 5', $name );

@@ -37,7 +37,7 @@
          		@if($errors->has('url')) <p class="text-danger"> {!! $errors->first('url') !!}</p> @endif
          </p>
          <p>
-         		<textarea class="form-control @if ($errors->has('description')) has-error @endif" placeholder="Describe the Project" rows="4" name="description" cols="50" value="{!! Input::old('description') !!}" ></textarea>
+         		<textarea class="form-control @if ($errors->has('description')) has-error @endif" placeholder="Describe the Project" rows="4" name="description" cols="50" value="{!! Input::old('description') !!}" id="desc"></textarea>
               @if ($errors->has('description')) <p class="text-danger"> {!! $errors->first('description') !!}</p> @endif
          </p>
          <p><select multiple="multiple" id="categories" placeholder="Choose Categories for this site" class="form-control @if ($errors->has('categories')) has-error @endif" name="categories[]">
@@ -81,7 +81,7 @@
          <input class="form-control" placeholder="Your email (optional)" name="from" type="text" value="{!! Input::old('from') !!}"></p>
        <p>
          <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-         <button class="btn btn-success btn-lg btn-block" type="submit" value="Submit site">
+         <button class="btn btn-success btn-lg btn-block" type="submit" value="Submit Site">
          <i class="fa fa-plus-circle fa-lg"></i>  Submit Site
          </button>
        </p>

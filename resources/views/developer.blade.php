@@ -33,7 +33,7 @@
 				            		  </h3>
 				            		  <p class='url-shift'>
 				                		<i class="fa fa-external-link fa-lg"></i>
-				                		<a href="{!! $dev->url !!}" target="__blank" class="visible-desktop">More Info</a>
+				                		<a href="{!! resolveHttp($dev->url) !!}" target="__blank" class="visible-desktop">More Info</a>
 				            		  </p>
 				            		  <p>
 				            		    {!! $dev->bio !!}
