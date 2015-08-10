@@ -9,7 +9,7 @@
     <meta property="og:url" content="http://laranaija.com" />
     <meta property="og:image" content="http://laranaija.com/images/laranaija-screenshot.jpg" />
     <meta property="og:site_name" content="Laranaija.com" />
-    <meta property="og:description" content="La`ranaija.com is a compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers" />
+    <meta property="og:description" content="Laranaija.com is a compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers" />
     <meta name="description" content="Laranaija.com is a Showcase of Developer Profiles; compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers">
     <meta name="author" content="Otemuyiwa Prosper, @unicodeveloper">
 	  <title>LARANAIJA :: Home Of Nigerian Laravel Developers</title>
