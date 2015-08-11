@@ -38,7 +38,7 @@
 			                		 {!! strtoupper($proj->name) !!}
 			            		  </h3>
 			            		  <p class='url-shift'>
-			                		<i class="fa fa-external-link fa-lg"></i> <a href="{!! $proj->url !!}" target="__blank" class="visible-desktop">View Site</a>
+			                		<i class="fa fa-external-link fa-lg"></i> <a href="{!! resolveHttp($proj->url) !!}" target="__blank" class="visible-desktop">View Site</a>
 			            		  </p>
 			            		  <p>
 			            		    {!! $proj->description !!}
