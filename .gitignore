@@ -2,6 +2,7 @@
 /node_modules
 .env
 .env.testing
+.DS_Store
 
 tests/_output/*
 tests/_output/*
