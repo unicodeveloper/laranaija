@@ -2,6 +2,7 @@
 
 use Input;
 use laranaija\Feeder\Feed;
+use laranaija\Http\Requests\ProjectRequest;
 use laranaija\Mailers\ProjectMailer as Mailer;
 use laranaija\Project;
 use Redirect;
@@ -38,7 +39,7 @@ class ProjectController extends Controller {
     $feeds = $this->getFeed($url);
     $projects = Project::where('approval_status', '=', 1 )->paginate(5);
 
-    return view('project')->withProject($projects)->withFeed($feeds);
+    return view('projects.list')->withProject($projects)->withFeed($feeds);
   }
 
   /**
@@ -46,7 +47,8 @@ class ProjectController extends Controller {
    * @param  string  $url
    * @return array $data
    */
-  public function getFeed($url){
+  public function getFeed($url)
+  {
     $this->laraUrl = $url;
     $rss = Feed::loadRss($this->laraUrl);
     $data = [];
@@ -63,59 +65,27 @@ class ProjectController extends Controller {
    *
    * @return RedirectResponse
    */
-  public function store(){
-    /*
-     * Create Validation rules
-     */
-    $rules = array(
-      'title'            => 'required',
-      'url'              => 'required',
-      'description'      => 'required',
-      'categories'       => 'required',
-      'tags'             => 'required'
-    );
+  public function store(ProjectRequest $request)
+  {
+
+    $project = new Project;
+    $project->name            = $request->input('title');
+    $project->url             = $request->input('url');
+    $project->description     = $request->input('description');
+    $project->categories      = $request->input('categories')[0];
+    $project->email           = $request->input('from');
+    $project->tags            = $request->input('tags')[0];
+    $project->approval_status = $request->input('approval_status');
+    $project->save();
 
     /*
-     * Create custom validation messages
+     * Email Notification immediately Project is submitted
      */
-    $messages = array(
-      'required' => 'The :attribute is very important.'
-    );
+    $this->mailer->submitProject();
+    $success_msg = "Project Successfully Submitted, Approval happens within 24 hours";
+    $request->session()->flash('approval-status', $success_msg);
 
-    /*
-     * Validate against the Form Inputs
-     */
-    $validator = Validator::make(Input::all(), $rules, $messages);
-
-    if($validator->fails()) {
-
-      $messages = $validator->messages();
-
-      return Redirect::to('projects/create')->withErrors($validator)->withInput();
-
-    } else {
-      /*
-       * Validation Successful
-       * Create the data for our project
-       */
-      $project = new Project;
-      $project->name            = Input::get('title');
-      $project->url             = Input::get('url');
-      $project->description     = Input::get('description');
-      $project->categories      = Input::get('categories')[0];
-      $project->email           = Input::get('from');
-      $project->tags            = Input::get('tags')[0];
-      $project->approval_status = Input::get('approval_status');
-      $project->save();
-
-      /*
-       * Email Notification immediately Project is submitted
-       */
-      $this->mailer->submitProject();
-      $success_msg = "Project Successfully Submitted, Approval happens within 24 hours";
-
-      return Redirect::to('projects/create')->withMessage( $success_msg );
-    }
+    return view('projects.create');
   }
 
   /**
@@ -123,7 +93,8 @@ class ProjectController extends Controller {
    *
    * @return Response
    */
-  public function create(){
-    return view('projcreate');
+  public function create()
+  {
+    return view('projects.create');
   }
 }
