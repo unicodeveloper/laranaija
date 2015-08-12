@@ -13,8 +13,8 @@ class Handler extends ExceptionHandler {
 	 * @var array
 	 */
 	protected $dontReport = [
-		NotFoundHttpException::class,
-		HttpException::class
+		// NotFoundHttpException::class,
+		// HttpException::class
 	];
 
 	/**
