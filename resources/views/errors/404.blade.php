@@ -14,9 +14,9 @@
     <meta name="author" content="Otemuyiwa Prosper, @unicodeveloper">
 	<title>LARANAIJA :: Home Of Nigerian Laravel Developers</title>
 	<link rel="shortcut icon" href={{{ asset('images/favicon.ico') }}} type="image/x-icon">
-	<link href={{{ asset('css/bootstrap.min.css') }}} rel="stylesheet">
-    <link href={{{ asset('css/main.css') }}} rel="stylesheet">
-    <link href={{{ asset('css/font-awesome.min.css') }}} rel="stylesheet">
+	<link href={!! asset('css/bootstrap.min.css') !!} rel="stylesheet">
+  <link href={!! asset('css/main.css') !!} rel="stylesheet">
+  <link href={!! asset('css/font-awesome.min.css') !!} rel="stylesheet">
 </head>
 
 <body class="home home-error">
@@ -37,9 +37,9 @@
 			</ul>
 			</div><!--/.nav-collapse -->
 		</div>
-	</div> 
+	</div>
 	<!-- /.navbar -->
-		
+
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 
@@ -48,6 +48,6 @@
     {{ HTML::script('js/jQuery.headroom.min.js') }}
     {{ HTML::script('js/template.js') }}
     {{ HTML::script('js/selectize.min.js') }}
-    
+
 </body>
 </html>
