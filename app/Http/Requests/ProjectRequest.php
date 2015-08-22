@@ -1,10 +1,10 @@
-<?php namespace laranaija\Http\Requests;
+<?php
 
-use laranaija\Http\Requests\Request;
+namespace laranaija\Http\Requests;
 
 class ProjectRequest extends Request
 {
-  /**
+    /**
    * Determine if the user is authorized to make this request.
    *
    * @return bool
@@ -26,7 +26,7 @@ class ProjectRequest extends Request
           'url'              => 'required|min:3',
           'description'      => 'required',
           'categories'       => 'required',
-          'tags'             => 'required'
+          'tags'             => 'required',
       ];
   }
 }

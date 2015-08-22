@@ -1,4 +1,6 @@
-<?php namespace laranaija\Http\Controllers;
+<?php
+
+namespace laranaija\Http\Controllers;
 
 use laranaija\Developer;
 use laranaija\Mailers\DeveloperMailer as DevMailer;
@@ -6,19 +8,19 @@ use laranaija\Mailers\ProjectMailer as ProMailer;
 use laranaija\Project;
 use Redirect;
 
-class AdminController extends Controller {
-
-  /**
-   * holds the instance of laranaija\Mailers\ProjectMailer
+class AdminController extends Controller
+{
+    /**
+   * holds the instance of laranaija\Mailers\ProjectMailer.
    *
-   * @var $promailer
+   * @var
    */
   protected $promailer;
 
   /**
-   * holds the instance of laranaija\Mailers\DeveloperMailer
+   * holds the instance of laranaija\Mailers\DeveloperMailer.
    *
-   * @var $devmailer
+   * @var
    */
   protected $devmailer;
 
@@ -27,12 +29,13 @@ class AdminController extends Controller {
    *
    * @param  laranaija\Mailers\ProjectMailer   $promailer
    * @param  laranaija\Mailers\DeveloperMailer $devmailer
+   *
    * @return void
    */
-  public function __construct(ProMailer $promailer, DevMailer $devmailer){
-
-    $this->promailer = $promailer;
-    $this->devmailer = $devmailer;
+  public function __construct(ProMailer $promailer, DevMailer $devmailer)
+  {
+      $this->promailer = $promailer;
+      $this->devmailer = $devmailer;
   }
 
   /**
@@ -42,8 +45,9 @@ class AdminController extends Controller {
    */
   public function index()
   {
-    $allProjects = Project::all();
-    return view('admin.projects-list')->withProject($allProjects);
+      $allProjects = Project::all();
+
+      return view('admin.projects-list')->withProject($allProjects);
   }
 
   /**
@@ -51,10 +55,11 @@ class AdminController extends Controller {
    *
    * @return Response
    */
-  public function  showDevelopers()
+  public function showDevelopers()
   {
-    $allDevelopers = Developer::all();
-    return view('admin.developers-list')->withDeveloper($allDevelopers);
+      $allDevelopers = Developer::all();
+
+      return view('admin.developers-list')->withDeveloper($allDevelopers);
   }
 
   /**
@@ -64,40 +69,42 @@ class AdminController extends Controller {
    */
   public function approve($id)
   {
-    $projects     = Project::find($id);
-    $email        = $projects->email;
-    $projectTitle = strtoupper($projects->name);
-    $projects->approval_status = 1;
-    $projects->save();
+      $projects = Project::find($id);
+      $email = $projects->email;
+      $projectTitle = strtoupper($projects->name);
+      $projects->approval_status = 1;
+      $projects->save();
 
     /*
      * Send email to the User on Project Approval
      */
     $this->promailer->notifyUserOfApproval($email, $data = [], $projectTitle);
-    $message = "Project " . $projects->name . " has been Approved Successfully";
+      $message = 'Project '.$projects->name.' has been Approved Successfully';
 
-    return Redirect::to('admin/projects/')->withMessage( $message );
+      return Redirect::to('admin/projects/')->withMessage($message);
   }
 
   /**
    * Approve developer profiles submitted by the Users.
+   *
    * @param  Integer $id
+   *
    * @return RedirectResponse
    */
   public function devapprove($id)
   {
-    $developers = Developer::find($id);
-    $email      = $developers->email;
-    $codeName   = strtoupper($developers->code_name);
-    $developers->approval_status = 1;
-    $developers->save();
+      $developers = Developer::find($id);
+      $email = $developers->email;
+      $codeName = strtoupper($developers->code_name);
+      $developers->approval_status = 1;
+      $developers->save();
 
     /*
      * Send email to the User on Profile Approval
      */
     $this->devmailer->notifyDevOfApproval($email, $data = [], $codeName);
-    $message = "Developer " . $developers->name . " has been Approved Successfully";
+      $message = 'Developer '.$developers->name.' has been Approved Successfully';
 
-    return Redirect::to('admin/developers/')->withMessage($message);
+      return Redirect::to('admin/developers/')->withMessage($message);
   }
 }

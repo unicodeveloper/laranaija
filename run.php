@@ -1,8 +1,8 @@
 <?php
-/**
- * Codeception PHP script runner
- */
 
+/**
+ * Codeception PHP script runner.
+ */
 require_once dirname(__FILE__).'/vendor/codeception/codeception/autoload.php';
 
 use Symfony\Component\Console\Application;

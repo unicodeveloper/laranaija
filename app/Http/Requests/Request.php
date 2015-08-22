@@ -1,9 +1,10 @@
-<?php namespace laranaija\Http\Requests;
+<?php
+
+namespace laranaija\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-abstract class Request extends FormRequest {
-
-	//
-
+abstract class Request extends FormRequest
+{
+    //
 }

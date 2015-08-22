@@ -1,4 +1,5 @@
 <?php
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -26,6 +27,6 @@ Route::get('admin/projects/{id}', 'AdminController@approve');
 Route::get('admin/developers', 'AdminController@showDevelopers');
 Route::get('admin/developers/{id}', 'AdminController@devapprove');
 
-Route::get('about', function(){
+Route::get('about', function () {
    return view('about');
 });

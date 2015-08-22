@@ -11,7 +11,7 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application;
+$app = new Illuminate\Foundation\Application();
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +24,9 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment( function(){
-	
-	return gethostname() == 'snowy-chasm' ? 'production' : 'development';
+$env = $app->detectEnvironment(function () {
+
+    return gethostname() == 'snowy-chasm' ? 'production' : 'development';
 
 });
 
