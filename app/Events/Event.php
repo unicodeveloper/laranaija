@@ -1,7 +1,8 @@
-<?php namespace laranaija\Events;
+<?php
 
-abstract class Event {
+namespace laranaija\Events;
 
-	//
-
+abstract class Event
+{
+    //
 }

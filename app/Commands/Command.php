@@ -1,7 +1,8 @@
-<?php namespace laranaija\Commands;
+<?php
 
-abstract class Command {
+namespace laranaija\Commands;
 
-	//
-
+abstract class Command
+{
+    //
 }

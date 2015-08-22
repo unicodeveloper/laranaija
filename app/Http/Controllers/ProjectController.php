@@ -1,19 +1,19 @@
-<?php namespace laranaija\Http\Controllers;
+<?php
+
+namespace laranaija\Http\Controllers;
 
 use Input;
 use laranaija\Feeder\Feed;
 use laranaija\Http\Requests\ProjectRequest;
 use laranaija\Mailers\ProjectMailer as Mailer;
 use laranaija\Project;
-use Redirect;
-use Validator;
 
-class ProjectController extends Controller {
-
-  /**
-   * holds the instance of laranaija\Mailers\ProjectMailer
+class ProjectController extends Controller
+{
+    /**
+   * holds the instance of laranaija\Mailers\ProjectMailer.
    *
-   * @var $mailer
+   * @var
    */
   protected $mailer;
 
@@ -21,11 +21,12 @@ class ProjectController extends Controller {
    * Create a new ProjectController instance.
    *
    * @param  laranaija\Mailers\ProjectMailer $mailer
+   *
    * @return void
    */
   public function __construct(Mailer $mailer)
   {
-    $this->mailer = $mailer;
+      $this->mailer = $mailer;
   }
 
   /**
@@ -35,29 +36,31 @@ class ProjectController extends Controller {
    */
   public function index()
   {
-    $url = 'https://laravel-news.com/feed/';
-    $feeds = $this->getFeed($url);
-    $projects = Project::where('approval_status', '=', 1 )->paginate(5);
+      $url = 'https://laravel-news.com/feed/';
+      $feeds = $this->getFeed($url);
+      $projects = Project::where('approval_status', '=', 1)->paginate(5);
 
-    return view('projects.list')->withProject($projects)->withFeed($feeds);
+      return view('projects.list')->withProject($projects)->withFeed($feeds);
   }
 
   /**
    * Show the RSS feed.
+   *
    * @param  string  $url
+   *
    * @return array $data
    */
   public function getFeed($url)
   {
-    $this->laraUrl = $url;
-    $rss = Feed::loadRss($this->laraUrl);
-    $data = [];
+      $this->laraUrl = $url;
+      $rss = Feed::loadRss($this->laraUrl);
+      $data = [];
 
-    foreach ($rss->item as $item) {
-      array_push($data, $item);
-    }
+      foreach ($rss->item as $item) {
+          array_push($data, $item);
+      }
 
-    return $data;
+      return $data;
   }
 
   /**
@@ -67,25 +70,24 @@ class ProjectController extends Controller {
    */
   public function store(ProjectRequest $request)
   {
-
-    $project = new Project;
-    $project->name            = $request->input('title');
-    $project->url             = $request->input('url');
-    $project->description     = $request->input('description');
-    $project->categories      = $request->input('categories')[0];
-    $project->email           = $request->input('from');
-    $project->tags            = $request->input('tags')[0];
-    $project->approval_status = $request->input('approval_status');
-    $project->save();
+      $project = new Project();
+      $project->name = $request->input('title');
+      $project->url = $request->input('url');
+      $project->description = $request->input('description');
+      $project->categories = $request->input('categories')[0];
+      $project->email = $request->input('from');
+      $project->tags = $request->input('tags')[0];
+      $project->approval_status = $request->input('approval_status');
+      $project->save();
 
     /*
      * Email Notification immediately Project is submitted
      */
     $this->mailer->submitProject();
-    $success_msg = "Project Successfully Submitted, Approval happens within 24 hours";
-    $request->session()->flash('approval-status', $success_msg);
+      $success_msg = 'Project Successfully Submitted, Approval happens within 24 hours';
+      $request->session()->flash('approval-status', $success_msg);
 
-    return view('projects.create');
+      return view('projects.create');
   }
 
   /**
@@ -95,6 +97,6 @@ class ProjectController extends Controller {
    */
   public function create()
   {
-    return view('projects.create');
+      return view('projects.create');
   }
 }

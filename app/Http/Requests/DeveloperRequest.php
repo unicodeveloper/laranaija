@@ -1,10 +1,10 @@
-<?php namespace laranaija\Http\Requests;
+<?php
 
-use laranaija\Http\Requests\Request;
+namespace laranaija\Http\Requests;
 
 class DeveloperRequest extends Request
 {
-   /**
+    /**
    * Determine if the user is authorized to make this request.
    *
    * @return bool
@@ -21,13 +21,13 @@ class DeveloperRequest extends Request
    */
   public function rules()
   {
-    return [
+      return [
       'name'            => 'required|min:3',
       'email'           => 'required|min:3',
       'url'             => 'required|min:3',
       'codename'        => 'required|min:3',
       'work_place'      => 'required|min:3',
-      'description'     => 'required|min:5'
+      'description'     => 'required|min:5',
     ];
   }
 }
