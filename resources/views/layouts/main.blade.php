@@ -73,11 +73,11 @@
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 
-	{!! Html::script('js/jquery.min.js') !!}
-    {!! Html::script('js/bootstrap.min.js') !!}
-    {!! Html::script('js/jQuery.headroom.min.js') !!}
-    {!! Html::script('js/template.js') !!}
-    {!! Html::script('js/selectize.min.js') !!}
+	{!! Html::script(secure_asset('js/jquery.min.js')) !!}
+    {!! Html::script(secure_asset('js/bootstrap.min.js')) !!}
+    {!! Html::script(secure_asset('js/jQuery.headroom.min.js')) !!}
+    {!! Html::script(secure_asset('js/template.js')) !!}
+    {!! Html::script(secure_asset('js/selectize.min.js')) !!}
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
