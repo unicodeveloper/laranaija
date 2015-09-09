@@ -12,12 +12,12 @@
     <meta property="og:description" content="Laranaija.com is a compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers" />
     <meta name="description" content="Laranaija.com is a Showcase of Developer Profiles; compilation of web sites and web applications built with Laravel PHP framework by Nigerian Developers">
     <meta name="author" content="Otemuyiwa Prosper, @unicodeveloper">
-	  <title>LARANAIJA :: Home Of Nigerian Laravel Developers</title>
-	  <link rel="shortcut icon" href={!! asset('images/favicon.ico') !!} type="image/x-icon">
-	  <link href={!! asset('css/bootstrap.min.css') !!} rel="stylesheet">
-    <link href={!! asset('css/main.css') !!} rel="stylesheet">
-    <link href={!! asset('css/font-awesome.min.css') !!} rel="stylesheet">
-    <link href={!! asset('css/selectize.bootstrap3.css') !!} rel="stylesheet">
+    <title>LARANAIJA :: Home Of Nigerian Laravel Developers</title>
+    <link rel="shortcut icon" href={!! asset('images/favicon.ico') !!} type="image/x-icon">
+    <link href={!! secure_asset('css/bootstrap.min.css') !!} rel="stylesheet">
+    <link href={!! secure_asset('css/main.css') !!} rel="stylesheet">
+    <link href={!! secure_asset('css/font-awesome.min.css') !!} rel="stylesheet">
+    <link href={!! secure_asset('css/selectize.bootstrap3.css') !!} rel="stylesheet">
 </head>
 
 <body class="home">
@@ -73,7 +73,7 @@
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 
-	  {!! Html::script('js/jquery.min.js') !!}
+	{!! Html::script('js/jquery.min.js') !!}
     {!! Html::script('js/bootstrap.min.js') !!}
     {!! Html::script('js/jQuery.headroom.min.js') !!}
     {!! Html::script('js/template.js') !!}
