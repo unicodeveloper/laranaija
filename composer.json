@@ -41,7 +41,7 @@
 		"post-update-cmd": [
 			"php artisan clear-compiled",
 			"php artisan optimize",
-			"php artisan migrate --force"
+			"php artisan migrate"
 		],
 		"post-create-project-cmd": [
 			"php -r \"copy('.env.example', '.env');\"",
