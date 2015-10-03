@@ -1,6 +1,6 @@
 ## LARANAIJA
 
-[![Join the chat at https://gitter.im/busayo/laranaija](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/busayo/laranaija?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+![](https://img.shields.io/badge/unicodeveloper-approved-brightgreen.svg)
 
 [![Build Status](https://travis-ci.org/busayo/laranaija.svg)](https://travis-ci.org/busayo/laranaija)
 
